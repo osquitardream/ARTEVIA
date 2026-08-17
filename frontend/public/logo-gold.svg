@@ -1,0 +1,22 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ARTEVIA Grupo Inmobiliario - Luxury Gold Version -->
+  <!-- Outer Square Frame -->
+  <rect x="220" y="80" width="360" height="360" stroke="#c89b5c" stroke-width="26" fill="none" />
+  
+  <!-- Stylized 'A' Triangular Structure -->
+  <path d="M400 110 L525 400 H460 L400 245 L340 400 H275 L400 110 Z" fill="#c89b5c" />
+  
+  <!-- Inner Pillar / '1' -->
+  <path d="M370 270 L400 215 V400 H370 V270 Z" fill="#e5c38c" />
+  
+  <!-- Baseline Frame Base -->
+  <rect x="255" y="400" width="290" height="20" fill="#c89b5c" />
+  
+  <!-- Typography ARTEVIA -->
+  <text x="400" y="555" font-family="'Playfair Display', 'Times New Roman', Georgia, serif" font-size="94" font-weight="600" fill="#c89b5c" text-anchor="middle" letter-spacing="0.22em">ARTEVIA</text>
+  
+  <!-- Typography GRUPO INMOBILIARIO with clean separated side dashes -->
+  <line x1="80" y1="620" x2="175" y2="620" stroke="#b58a4b" stroke-width="3.5" stroke-linecap="round" />
+  <text x="400" y="628" font-family="'Outfit', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="600" fill="#b58a4b" text-anchor="middle" letter-spacing="0.24em">GRUPO INMOBILIARIO</text>
+  <line x1="625" y1="620" x2="720" y2="620" stroke="#b58a4b" stroke-width="3.5" stroke-linecap="round" />
+</svg>
