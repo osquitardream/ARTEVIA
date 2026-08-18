@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!property) {
     return {
       title: 'Propiedad no encontrada | ARTEVÍA Inmobiliaria',
-      description: 'Consulta nuestro catálogo de inmuebles exclusivos en Lima, Perú.',
+      description: 'Consulta nuestro catálogo de inmuebles exclusivos en Cajamarca, Perú.',
     };
   }
 

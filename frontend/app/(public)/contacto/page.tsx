@@ -65,14 +65,14 @@ function ContactFormContent() {
       <div className="space-y-6">
         <Card className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 space-y-6">
           <h3 className="font-serif text-xl font-normal text-slate-900 border-b border-slate-100 pb-3">
-            Oficina de Atención
+            Canales de Atención
           </h3>
           <ul className="space-y-5 text-sm text-slate-600 font-light">
             <li className="flex items-start gap-3">
               <MapPin className="w-5 h-5 text-[#c89b5c] shrink-0 mt-0.5" />
               <div>
-                <span className="font-semibold text-slate-800 block text-xs uppercase tracking-wider mb-0.5">Dirección Principal</span>
-                <span>Av. Victor Andrés Belaunde 147, San Isidro, Lima, Perú</span>
+                <span className="font-semibold text-slate-800 block text-xs uppercase tracking-wider mb-0.5">Ubicación y Cobertura</span>
+                <span>Cajamarca, Perú — Atención Digital y Visitas Coordinadas</span>
               </div>
             </li>
             <li className="flex items-start gap-3">
@@ -160,7 +160,7 @@ function ContactFormContent() {
                   Asunto / Interés
                 </label>
                 <Input
-                  placeholder="Ej: Consulta por Casa en La Molina"
+                  placeholder="Ej: Consulta por Inmueble en Baños del Inca"
                   {...register('subject')}
                   className="bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 focus:border-[#c89b5c]"
                 />

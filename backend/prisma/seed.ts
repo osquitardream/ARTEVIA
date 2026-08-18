@@ -33,28 +33,28 @@ async function main() {
   // 2. Seed Districts
   const districts = [
     {
-      name: 'La Molina',
-      slug: 'la-molina',
+      name: 'Baños del Inca',
+      slug: 'banos-del-inca',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Zonas residenciales de alto valor y exclusividad.',
+      description: 'Zona residencial campestre y turística de alto valor y exclusividad.',
     },
     {
-      name: 'San Isidro',
-      slug: 'san-isidro',
+      name: 'Cajamarca Centro',
+      slug: 'cajamarca-centro',
       image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Centro financiero con desarrollos ejecutivos de primera clase.',
+      description: 'Centro histórico y comercial con desarrollos ejecutivos y departamentos.',
     },
     {
-      name: 'Miraflores',
-      slug: 'miraflores',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Vista al mar, áreas turísticas y departamentos modernos.',
-    },
-    {
-      name: 'Cajamarca',
-      slug: 'cajamarca',
+      name: 'Llacanora',
+      slug: 'llacanora',
       image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      description: 'Terrenos amplios e inmuebles de alta plusvalía.',
+      description: 'Terrenos amplios y casas de campo con excelente clima y alta plusvalía.',
+    },
+    {
+      name: 'Santa Bárbara',
+      slug: 'santa-barbara',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      description: 'Área residencial tranquila y segura con rápido acceso a la ciudad.',
     },
   ];
 
@@ -73,24 +73,24 @@ async function main() {
       name: 'Alejandro Vargas',
       role: 'DIRECTOR GENERAL',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      email: 'olimaym18@gmail.com',
-      phone: '+51 954 430 927',
+      email: 'arteviainmobiliaria@gmail.com',
+      phone: '+51 965 355 800',
       order: 1,
     },
     {
       name: 'Valentina Torres',
       role: 'DIRECTORA COMERCIAL',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      email: 'olimaym18@gmail.com',
-      phone: '+51 954 430 927',
+      email: 'arteviainmobiliaria@gmail.com',
+      phone: '+51 965 355 800',
       order: 2,
     },
     {
       name: 'Carlos Mendoza',
       role: 'AGENTE SENIOR',
       image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      email: 'olimaym18@gmail.com',
-      phone: '+51 954 430 927',
+      email: 'arteviainmobiliaria@gmail.com',
+      phone: '+51 965 355 800',
       order: 3,
     },
   ];
@@ -101,17 +101,17 @@ async function main() {
   console.log('✅ Representatives seeded');
 
   // 4. Seed Properties
-  const laMolina = await prisma.district.findUnique({ where: { slug: 'la-molina' } });
-  const sanIsidro = await prisma.district.findUnique({ where: { slug: 'san-isidro' } });
-  const miraflores = await prisma.district.findUnique({ where: { slug: 'miraflores' } });
-  const cajamarca = await prisma.district.findUnique({ where: { slug: 'cajamarca' } });
+  const banosDelInca = await prisma.district.findUnique({ where: { slug: 'banos-del-inca' } });
+  const cajamarcaCentro = await prisma.district.findUnique({ where: { slug: 'cajamarca-centro' } });
+  const llacanora = await prisma.district.findUnique({ where: { slug: 'llacanora' } });
+  const santaBarbara = await prisma.district.findUnique({ where: { slug: 'santa-barbara' } });
 
   const properties = [
     {
-      title: 'Casa de Lujo en La Molina',
-      slug: 'casa-de-lujo-en-la-molina',
-      location: 'La Molina',
-      price: 1500000,
+      title: 'Residencia Exclusiva en Baños del Inca',
+      slug: 'residencia-exclusiva-en-banos-del-inca',
+      location: 'Baños del Inca',
+      price: 850000,
       operation: OperationType.VENTA,
       type: PropertyType.CASA,
       area: 450,
@@ -124,20 +124,20 @@ async function main() {
       ],
       featured: true,
       status: PropertyStatus.DISPONIBLE,
-      description: 'Hermosa propiedad de lujo con acabados de granito, piscina climatizada y áreas verdes.',
+      description: 'Hermosa residencia campestre de lujo con acabados de primera, jardines amplios y piscina climatizada en Baños del Inca.',
       features: [
         'Seguridad 24/7 y control de acceso',
-        'Excelente iluminación natural',
-        'Documentación inscrita en Registros Públicos',
-        'Cercano a avenidas principales y zonas comerciales',
+        'Excelente iluminación natural y clima cálido',
+        'Documentación inscrita en Registros Públicos (Sunarp)',
+        'Cercano a zonas comerciales y termales',
       ],
-      districtId: laMolina?.id,
+      districtId: banosDelInca?.id,
     },
     {
-      title: 'Departamento Exclusivo San Isidro',
-      slug: 'departamento-exclusivo-san-isidro',
-      location: 'San Isidro',
-      price: 3500,
+      title: 'Departamento Moderno Cajamarca Centro',
+      slug: 'departamento-moderno-cajamarca-centro',
+      location: 'Cajamarca Centro',
+      price: 2500,
       operation: OperationType.ALQUILER,
       type: PropertyType.DEPARTAMENTO,
       area: 120,
@@ -149,44 +149,19 @@ async function main() {
       ],
       featured: true,
       status: PropertyStatus.DISPONIBLE,
-      description: 'Departamento moderno totalmente amoblado con vista al golf.',
+      description: 'Departamento moderno totalmente equipado en el corazón de Cajamarca, con vista panorámica y acabados premium.',
       features: [
-        'Seguridad 24/7 y control de acceso',
-        'Excelente iluminación natural',
-        'Documentación inscrita en Registros Públicos',
-        'Cercano a avenidas principales y zonas comerciales',
+        'Seguridad 24/7 y cámaras de vigilancia',
+        'Ascensor directo y cochera privada',
+        'Documentación en regla',
+        'A pocos minutos de centros comerciales y bancos',
       ],
-      districtId: sanIsidro?.id,
+      districtId: cajamarcaCentro?.id,
     },
     {
-      title: 'Oficina Premium Miraflores',
-      slug: 'oficina-premium-miraflores',
-      location: 'Miraflores',
-      price: 800000,
-      operation: OperationType.VENTA,
-      type: PropertyType.OFICINA,
-      area: 85,
-      beds: 1,
-      baths: 2,
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      images: [
-        'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      ],
-      featured: true,
-      status: PropertyStatus.ALQUILADO,
-      description: 'Oficina ejecutiva con certificación LEED y salas de conferencias.',
-      features: [
-        'Seguridad 24/7 y control de acceso',
-        'Excelente iluminación natural',
-        'Documentación inscrita en Registros Públicos',
-        'Cercano a avenidas principales y zonas comerciales',
-      ],
-      districtId: miraflores?.id,
-    },
-    {
-      title: 'Terreno Campestre Exclusivo Cajamarca',
-      slug: 'terreno-campestre-exclusivo-cajamarca',
-      location: 'Cajamarca',
+      title: 'Terreno Campestre Exclusivo Llacanora',
+      slug: 'terreno-campestre-exclusivo-llacanora',
+      location: 'Llacanora',
       price: 450000,
       operation: OperationType.VENTA,
       type: PropertyType.TERRENO,
@@ -199,14 +174,39 @@ async function main() {
       ],
       featured: true,
       status: PropertyStatus.DISPONIBLE,
-      description: 'Amplio terreno campestre con vistas panorámicas al valle de Cajamarca, ideal para casa de campo o proyecto ecológico.',
+      description: 'Amplio terreno campestre con vistas panorámicas al valle de Llacanora, ideal para casa de campo o proyecto ecológico.',
       features: [
         'Acceso directo a vía principal',
         'Servicios de agua y luz disponibles',
         'Título de propiedad saneado e inscrito en Sunarp',
-        'Entorno natural con clima privilegiado',
+        'Entorno natural con clima privilegiado todo el año',
       ],
-      districtId: cajamarca?.id,
+      districtId: llacanora?.id,
+    },
+    {
+      title: 'Casa Moderna en Santa Bárbara',
+      slug: 'casa-moderna-en-santa-barbara',
+      location: 'Santa Bárbara',
+      price: 680000,
+      operation: OperationType.VENTA,
+      type: PropertyType.CASA,
+      area: 280,
+      beds: 3,
+      baths: 3,
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      ],
+      featured: true,
+      status: PropertyStatus.DISPONIBLE,
+      description: 'Casa contemporánea de 3 niveles con acabados en madera nativa, terraza y estacionamiento para 2 vehículos.',
+      features: [
+        'Zona residencial tranquila',
+        'Acabados de primera calidad',
+        'Documentación lista para transferencia bancaria',
+        'Excelente distribución e iluminación',
+      ],
+      districtId: santaBarbara?.id,
     },
   ];
 
@@ -222,14 +222,14 @@ async function main() {
   // 5. Seed Success Stories
   const stories = [
     {
-      title: 'Venta Récord Residencia La Molina',
-      description: 'Logramos la transacción y cierre de venta en menos de 15 días con total satisfacción del cliente.',
+      title: 'Venta Récord Residencia Baños del Inca',
+      description: 'Logramos la transacción y cierre de venta en menos de 15 días con total satisfacción del cliente en Baños del Inca.',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       clientName: 'Familia Ramírez',
     },
     {
-      title: 'Alquiler Corporativo San Isidro',
-      description: 'Asesoría integral para la colocación de oficinas de alta gama a multinacional tecnológica.',
+      title: 'Alquiler Corporativo Cajamarca Centro',
+      description: 'Asesoría integral para la colocación de inmuebles ejecutivos de alta gama en Cajamarca.',
       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
       clientName: 'TechCorp International',
     },

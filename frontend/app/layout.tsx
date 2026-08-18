@@ -15,8 +15,8 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  title: 'ARTEVÍA | Inmobiliaria de Lujo y Propiedades Exclusivas',
-  description: 'Propiedades exclusivas en los distritos más codiciados de Lima. Experiencia, discreción y resultados.',
+  title: 'ARTEVÍA | Inmobiliaria de Lujo y Propiedades Exclusivas en Cajamarca',
+  description: 'Propiedades exclusivas en las zonas más codiciadas de Cajamarca. Experiencia, discreción y resultados.',
 };
 
 export default function RootLayout({

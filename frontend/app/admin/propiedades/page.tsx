@@ -505,14 +505,14 @@ export default function AdminPropiedadesPage() {
             <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <div>
                 <label style={labelStyle}>Título de la Propiedad *</label>
-                <input {...register('title')} placeholder="Ej: Departamento de Lujo en San Isidro" style={inputStyle} />
+                <input {...register('title')} placeholder="Ej: Residencia Exclusiva en Baños del Inca" style={inputStyle} />
                 {errors.title && <p style={{ color: '#dc2626', fontSize: 11, marginTop: 2 }}>{errors.title.message}</p>}
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div>
                   <label style={labelStyle}>Ubicación / Distrito *</label>
-                  <input {...register('location')} placeholder="Ej: San Isidro, Lima" style={inputStyle} />
+                  <input {...register('location')} placeholder="Ej: Baños del Inca, Cajamarca" style={inputStyle} />
                   {errors.location && <p style={{ color: '#dc2626', fontSize: 11, marginTop: 2 }}>{errors.location.message}</p>}
                 </div>
                 <div>

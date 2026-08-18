@@ -28,10 +28,10 @@ export default function HomePage() {
         setFeaturedProperties([
           {
             id: '1',
-            title: 'Casa de Lujo en La Molina',
-            slug: 'casa-de-lujo-en-la-molina',
-            location: 'La Molina',
-            price: 1500000,
+            title: 'Residencia Exclusiva en Baños del Inca',
+            slug: 'residencia-exclusiva-en-banos-del-inca',
+            location: 'Baños del Inca',
+            price: 850000,
             operation: 'VENTA',
             type: 'casa',
             area: 450,
@@ -42,10 +42,10 @@ export default function HomePage() {
           },
           {
             id: '2',
-            title: 'Departamento Exclusivo San Isidro',
-            slug: 'departamento-exclusivo-san-isidro',
-            location: 'San Isidro',
-            price: 3500,
+            title: 'Departamento Moderno Cajamarca Centro',
+            slug: 'departamento-moderno-cajamarca-centro',
+            location: 'Cajamarca Centro',
+            price: 2500,
             operation: 'ALQUILER',
             type: 'departamento',
             area: 120,
@@ -56,24 +56,24 @@ export default function HomePage() {
           },
           {
             id: '3',
-            title: 'Oficina Premium Miraflores',
-            slug: 'oficina-premium-miraflores',
-            location: 'Miraflores',
-            price: 800000,
+            title: 'Terreno Campestre Exclusivo Llacanora',
+            slug: 'terreno-campestre-exclusivo-llacanora',
+            location: 'Llacanora',
+            price: 450000,
             operation: 'VENTA',
-            type: 'oficina',
-            area: 85,
-            beds: 1,
-            baths: 2,
-            image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
+            type: 'terreno',
+            area: 1200,
+            beds: 0,
+            baths: 0,
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
             featured: true,
           },
         ]);
         setDistricts([
-          { id: '1', name: 'La Molina', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600' },
-          { id: '2', name: 'San Isidro', image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600' },
-          { id: '3', name: 'Miraflores', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600' },
-          { id: '4', name: 'Cajamarca', image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600' },
+          { id: '1', name: 'Baños del Inca', image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600' },
+          { id: '2', name: 'Cajamarca Centro', image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600' },
+          { id: '3', name: 'Llacanora', image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600' },
+          { id: '4', name: 'Santa Bárbara', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600' },
         ]);
       }
     }
@@ -91,7 +91,7 @@ export default function HomePage() {
           <div className="absolute inset-0 z-0">
             <Image
               src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2200&q=90"
-              alt="ARTEVÍA Luxury Real Estate"
+              alt="ARTEVÍA Luxury Real Estate Cajamarca"
               fill
               priority
               className="object-cover brightness-60 scale-105"
@@ -104,7 +104,7 @@ export default function HomePage() {
             {/* Left Content Column */}
             <div className="lg:col-span-8 space-y-6 pt-6">
               <span className="text-xs font-medium uppercase tracking-[0.4em] text-slate-300 block">
-                L I M A , &nbsp; P E R Ú
+                C A J A M A R C A , &nbsp; P E R Ú
               </span>
 
               <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-white leading-[1.08] tracking-tight">
@@ -112,7 +112,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-sm sm:text-base text-slate-300 font-light max-w-xl leading-relaxed">
-                Propiedades exclusivas en los distritos más codiciados de Lima. Experiencia, discreción y resultados.
+                Propiedades exclusivas en las zonas más codiciadas de Cajamarca. Experiencia, discreción y resultados.
               </p>
 
               {/* Inline Light Search Bar */}
@@ -145,9 +145,9 @@ export default function HomePage() {
               </div>
 
               <div>
-                <span className="font-serif text-3xl md:text-4xl text-[#c89b5c] block font-light">Lima</span>
+                <span className="font-serif text-3xl md:text-4xl text-[#c89b5c] block font-light">Cajamarca</span>
                 <span className="text-[10px] uppercase tracking-[0.25em] text-slate-300 font-medium block mt-0.5">
-                  DISTRITOS PREMIUM
+                  ZONAS PREMIUM
                 </span>
               </div>
             </div>
@@ -181,9 +181,9 @@ export default function HomePage() {
         <section className="py-24 bg-slate-50 border-t border-slate-200">
           <div className="container mx-auto px-6 sm:px-10 text-center max-w-3xl mb-14">
             <span className="text-xs uppercase tracking-[0.3em] text-[#c89b5c] font-semibold block">UBICACIONES EXCLUSIVAS</span>
-            <h2 className="font-serif text-4xl sm:text-5xl text-slate-900 font-normal mt-2">Distritos de Lima</h2>
+            <h2 className="font-serif text-4xl sm:text-5xl text-slate-900 font-normal mt-2">Zonas de Cajamarca</h2>
             <p className="text-slate-600 text-sm mt-3 font-light">
-              Descubre residencias e inmuebles corporativos en las zonas de mayor plusvalía.
+              Descubre residencias, casas de campo y terrenos en los sectores de mayor plusvalía de Cajamarca.
             </p>
           </div>
 

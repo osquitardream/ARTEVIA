@@ -12,7 +12,7 @@ export function Footer() {
             <BrandLogo variant="light" size="md" />
           </Link>
           <p className="text-xs leading-relaxed text-slate-400 font-light max-w-xs">
-            Propiedades exclusivas en los distritos más codiciados de Lima. Experiencia, discreción y resultados.
+            Propiedades exclusivas en las zonas más codiciadas de Cajamarca. Experiencia, discreción y resultados.
           </p>
           <div className="flex items-center gap-2.5 pt-1">
             <a href="#" className="p-1.5 rounded-lg bg-slate-800 hover:bg-[#c89b5c] text-slate-400 hover:text-white transition-colors">
@@ -57,11 +57,11 @@ export function Footer() {
 
         {/* Contact info */}
         <div>
-          <h4 className="font-serif text-sm text-white mb-2.5 border-b border-[#c89b5c]/30 pb-1.5 inline-block font-normal">Oficina Principal</h4>
+          <h4 className="font-serif text-sm text-white mb-2.5 border-b border-[#c89b5c]/30 pb-1.5 inline-block font-normal">Contacto</h4>
           <ul className="space-y-2 text-xs font-light">
             <li className="flex items-start gap-2.5">
               <MapPin className="w-3.5 h-3.5 text-[#c89b5c] shrink-0 mt-0.5" />
-              <span>Av. Victor Andrés Belaunde 147, San Isidro, Lima</span>
+              <span>Cajamarca, Perú (Atención Digital y Personalizada)</span>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone className="w-3.5 h-3.5 text-[#c89b5c] shrink-0" />
@@ -86,7 +86,7 @@ export function Footer() {
             Acceso Intranet
           </Link>
           <span className="text-slate-700">&bull;</span>
-          <p className="text-slate-600">Lima, Perú</p>
+          <p className="text-slate-600">Cajamarca, Perú</p>
         </div>
       </div>
     </footer>
