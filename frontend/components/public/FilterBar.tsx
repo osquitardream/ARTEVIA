@@ -26,6 +26,11 @@ export function FilterBar({ totalResults }: FilterBarProps) {
     router.push('/propiedades');
   };
 
+  const handleReset = () => {
+    resetFilters();
+    router.push('/propiedades');
+  };
+
   return (
     <div className="bg-white border border-slate-200 p-3 rounded-xl shadow-sm">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-3">
@@ -88,7 +93,7 @@ export function FilterBar({ totalResults }: FilterBarProps) {
         {/* Action Button & Counter */}
         <div className="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-end border-t lg:border-t-0 pt-3 lg:pt-0 border-slate-100">
           <button
-            onClick={resetFilters}
+            onClick={handleReset}
             className="bg-[#c89b5c] hover:bg-[#b58a4b] text-white text-xs font-semibold px-5 py-2.5 rounded-md shadow-sm transition-all duration-300 flex items-center gap-2"
           >
             <RotateCcw className="w-3.5 h-3.5" />

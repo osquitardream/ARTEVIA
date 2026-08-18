@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import { Navbar } from '@/components/public/Navbar';
 import { Footer } from '@/components/public/Footer';
 import { PropertyCard, Property } from '@/components/public/PropertyCard';
@@ -9,10 +10,32 @@ import { FilterBar } from '@/components/public/FilterBar';
 import { useFilterStore } from '@/store/useFilterStore';
 import { fetchApi } from '@/lib/api';
 
-export default function PropiedadesPage() {
+function PropiedadesContent() {
+  const searchParams = useSearchParams();
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
-  const { search, operation, type, location } = useFilterStore();
+  const { search, operation, type, location, setLocation, setOperation, setType, setSearch } = useFilterStore();
+
+  // Sync URL search params on mount or when searchParams change
+  useEffect(() => {
+    const locParam = searchParams.get('location');
+    const opParam = searchParams.get('operation');
+    const typeParam = searchParams.get('type');
+    const searchParam = searchParams.get('search');
+
+    if (locParam) {
+      setLocation(locParam);
+    }
+    if (opParam) {
+      setOperation(opParam);
+    }
+    if (typeParam) {
+      setType(typeParam);
+    }
+    if (searchParam) {
+      setSearch(searchParam);
+    }
+  }, [searchParams, setLocation, setOperation, setType, setSearch]);
 
   useEffect(() => {
     async function loadProperties() {
@@ -59,6 +82,11 @@ export default function PropiedadesPage() {
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl text-white font-normal">
               Propiedades exclusivas
             </h1>
+            {location && location !== 'all' && (
+              <p className="text-[#c89b5c] text-sm mt-2 font-medium tracking-wide">
+                Filtrando por: <span className="text-white font-serif italic text-base">{location}</span>
+              </p>
+            )}
           </div>
         </section>
 
@@ -74,7 +102,11 @@ export default function PropiedadesPage() {
             ) : properties.length === 0 ? (
               <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <p className="text-xl text-slate-800 font-serif font-bold mb-2">No se encontraron propiedades</p>
-                <p className="text-sm text-slate-500 font-light">Prueba ajustando o limpiando los filtros de búsqueda.</p>
+                <p className="text-sm text-slate-500 font-light">
+                  {location && location !== 'all'
+                    ? `No hay propiedades registradas actualmente en "${location}".`
+                    : 'Prueba ajustando o limpiando los filtros de búsqueda.'}
+                </p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -89,5 +121,19 @@ export default function PropiedadesPage() {
 
       <Footer />
     </>
+  );
+}
+
+export default function PropiedadesPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-500">
+          Cargando propiedades...
+        </div>
+      }
+    >
+      <PropiedadesContent />
+    </Suspense>
   );
 }

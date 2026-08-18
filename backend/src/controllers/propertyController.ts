@@ -15,32 +15,47 @@ export const getProperties = async (req: Request, res: Response): Promise<void> 
   try {
     const { operation, type, location, minPrice, maxPrice, featured, search } = req.query;
 
-    const where: any = {};
+    const andConditions: any[] = [];
 
     if (operation && operation !== 'all') {
-      where.operation = (operation as string).toUpperCase();
+      andConditions.push({ operation: (operation as string).toUpperCase() });
     }
     if (type && type !== 'all') {
-      where.type = (type as string).toUpperCase();
-    }
-    if (location && location !== 'all') {
-      where.location = { contains: location as string, mode: 'insensitive' };
+      andConditions.push({ type: (type as string).toUpperCase() });
     }
     if (featured === 'true') {
-      where.featured = true;
+      andConditions.push({ featured: true });
     }
     if (minPrice || maxPrice) {
-      where.price = {};
-      if (minPrice) where.price.gte = parseFloat(minPrice as string);
-      if (maxPrice) where.price.lte = parseFloat(maxPrice as string);
+      const priceFilter: any = {};
+      if (minPrice) priceFilter.gte = parseFloat(minPrice as string);
+      if (maxPrice) priceFilter.lte = parseFloat(maxPrice as string);
+      andConditions.push({ price: priceFilter });
+    }
+    if (location && location !== 'all') {
+      const locStr = (location as string).trim();
+      const locSlug = locStr.toLowerCase().replace(/\s+/g, '-');
+      andConditions.push({
+        OR: [
+          { location: { contains: locStr, mode: 'insensitive' } },
+          { district: { name: { contains: locStr, mode: 'insensitive' } } },
+          { district: { slug: { contains: locSlug, mode: 'insensitive' } } },
+        ],
+      });
     }
     if (search) {
-      where.OR = [
-        { title: { contains: search as string, mode: 'insensitive' } },
-        { location: { contains: search as string, mode: 'insensitive' } },
-        { description: { contains: search as string, mode: 'insensitive' } },
-      ];
+      const s = (search as string).trim();
+      andConditions.push({
+        OR: [
+          { title: { contains: s, mode: 'insensitive' } },
+          { location: { contains: s, mode: 'insensitive' } },
+          { description: { contains: s, mode: 'insensitive' } },
+          { district: { name: { contains: s, mode: 'insensitive' } } },
+        ],
+      });
     }
+
+    const where: any = andConditions.length > 0 ? { AND: andConditions } : {};
 
     const properties = await prisma.property.findMany({
       where,

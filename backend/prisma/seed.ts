@@ -104,6 +104,7 @@ async function main() {
   const laMolina = await prisma.district.findUnique({ where: { slug: 'la-molina' } });
   const sanIsidro = await prisma.district.findUnique({ where: { slug: 'san-isidro' } });
   const miraflores = await prisma.district.findUnique({ where: { slug: 'miraflores' } });
+  const cajamarca = await prisma.district.findUnique({ where: { slug: 'cajamarca' } });
 
   const properties = [
     {
@@ -181,6 +182,31 @@ async function main() {
         'Cercano a avenidas principales y zonas comerciales',
       ],
       districtId: miraflores?.id,
+    },
+    {
+      title: 'Terreno Campestre Exclusivo Cajamarca',
+      slug: 'terreno-campestre-exclusivo-cajamarca',
+      location: 'Cajamarca',
+      price: 450000,
+      operation: OperationType.VENTA,
+      type: PropertyType.TERRENO,
+      area: 1200,
+      beds: 0,
+      baths: 0,
+      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+      ],
+      featured: true,
+      status: PropertyStatus.DISPONIBLE,
+      description: 'Amplio terreno campestre con vistas panorámicas al valle de Cajamarca, ideal para casa de campo o proyecto ecológico.',
+      features: [
+        'Acceso directo a vía principal',
+        'Servicios de agua y luz disponibles',
+        'Título de propiedad saneado e inscrito en Sunarp',
+        'Entorno natural con clima privilegiado',
+      ],
+      districtId: cajamarca?.id,
     },
   ];
 
