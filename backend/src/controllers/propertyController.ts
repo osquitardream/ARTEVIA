@@ -59,7 +59,15 @@ export const getProperties = async (req: Request, res: Response): Promise<void> 
 
     const properties = await prisma.property.findMany({
       where,
-      include: { district: true },
+      include: {
+        district: {
+          select: {
+            id: true,
+            name: true,
+            slug: true,
+          },
+        },
+      },
       orderBy: { createdAt: 'desc' },
     });
 
@@ -78,7 +86,15 @@ export const getPropertyBySlugOrId = async (req: Request, res: Response): Promis
       where: {
         OR: [{ id: identifier }, { slug: identifier }],
       },
-      include: { district: true },
+      include: {
+        district: {
+          select: {
+            id: true,
+            name: true,
+            slug: true,
+          },
+        },
+      },
     });
 
     if (!property) {

@@ -126,14 +126,15 @@ export default function NosotrosPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {reps.map((rep) => (
                 <Card key={rep.id} className="bg-white border border-slate-200 overflow-hidden group rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300">
-                  <div className="relative h-72 w-full overflow-hidden">
+                  <div className="relative h-80 sm:h-96 w-full overflow-hidden bg-slate-100">
                     <Image
                       src={rep.image || 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600'}
                       alt={rep.name}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <CardContent className="p-6 space-y-2 text-center border-t border-slate-100">
                     <h3 className="font-serif text-xl font-normal text-slate-900">{rep.name}</h3>

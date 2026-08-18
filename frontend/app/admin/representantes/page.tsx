@@ -98,7 +98,7 @@ export default function AdminRepresentantesPage() {
         {reps.map((rep) => (
           <div key={rep.id} style={{ background: white, border: `1px solid ${borderCol}`, borderRadius: 12, padding: 18, display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ position: 'relative', width: 72, height: 72, borderRadius: 10, overflow: 'hidden', flexShrink: 0, border: `2px solid ${borderCol}` }}>
-              <Image src={rep.image} alt={rep.name} fill style={{ objectFit: 'cover' }} />
+              <Image src={rep.image} alt={rep.name} fill style={{ objectFit: 'cover', objectPosition: 'top' }} />
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <h3 style={{ fontFamily: 'Georgia, serif', fontSize: 15, fontWeight: 400, color: textMain, margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{rep.name}</h3>

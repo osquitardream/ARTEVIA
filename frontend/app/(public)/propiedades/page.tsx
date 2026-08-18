@@ -98,7 +98,22 @@ function PropiedadesContent() {
             </div>
 
             {loading ? (
-              <div className="py-20 text-center text-slate-500 font-medium">Cargando catálogo de propiedades...</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[1, 2, 3, 4, 5, 6].map((i) => (
+                  <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm animate-pulse">
+                    <div className="h-64 bg-slate-200 w-full" />
+                    <div className="p-6 space-y-4">
+                      <div className="h-4 bg-slate-200 rounded w-1/3" />
+                      <div className="h-6 bg-slate-200 rounded w-3/4" />
+                      <div className="h-4 bg-slate-200 rounded w-1/2" />
+                      <div className="pt-4 border-t border-slate-100 flex justify-between">
+                        <div className="h-4 bg-slate-200 rounded w-1/4" />
+                        <div className="h-4 bg-slate-200 rounded w-1/4" />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             ) : properties.length === 0 ? (
               <div className="py-20 text-center bg-white rounded-2xl border border-slate-200 shadow-sm">
                 <p className="text-xl text-slate-800 font-serif font-bold mb-2">No se encontraron propiedades</p>
