@@ -37,7 +37,12 @@ export function Footer() {
             <li><Link href="/exitos" className="hover:text-[#c89b5c] transition-colors">Casos de Éxito</Link></li>
             <li><Link href="/contacto" className="hover:text-[#c89b5c] transition-colors">Contacto</Link></li>
             <li>
-              <Link href="/intranet" className="text-slate-400 hover:text-[#c89b5c] transition-colors inline-flex items-center gap-1">
+              <Link
+                href="/intranet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-[#c89b5c] transition-colors inline-flex items-center gap-1"
+              >
                 <span>&bull;</span> Intranet Corporativa
               </Link>
             </li>
@@ -82,7 +87,12 @@ export function Footer() {
       <div className="container mx-auto px-6 sm:px-10 mt-6 pt-3.5 border-t border-slate-800 text-xs text-center text-slate-500 flex flex-col md:flex-row justify-between items-center gap-2">
         <p>© {new Date().getFullYear()} ARTEVÍA Inmobiliaria. Todos los derechos reservados.</p>
         <div className="flex items-center gap-3">
-          <Link href="/intranet" className="text-slate-400 hover:text-[#c89b5c] transition-colors">
+          <Link
+            href="/intranet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-[#c89b5c] transition-colors"
+          >
             Acceso Intranet
           </Link>
           <span className="text-slate-700">&bull;</span>

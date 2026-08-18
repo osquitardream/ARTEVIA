@@ -58,6 +58,8 @@ export function Navbar() {
           <div className="hidden md:flex items-center">
             <Link
               href="/admin"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-xs uppercase tracking-[0.2em] font-medium px-4 py-2 border border-[#c89b5c] text-[#c89b5c] rounded-md hover:bg-[#c89b5c] hover:text-white transition-all duration-300 flex items-center gap-2"
             >
               <UserCircle className="w-4 h-4" />
@@ -118,6 +120,8 @@ export function Navbar() {
           <div className="pt-4">
             <Link
               href={isAuthenticated ? '/admin' : '/intranet'}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="block text-center text-xs uppercase tracking-[0.25em] font-medium py-3 border border-slate-900 text-slate-900 rounded-md"
             >
